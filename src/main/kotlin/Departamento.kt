@@ -13,8 +13,8 @@ class Departamento(
     @Temporal(TemporalType.DATE)
     val fechaCreaccion: Date,
 
-    @OneToOne
-    val empleado: Empleado,
+    @OneToOne(mappedBy = "dpto")
+    val empleado: Empleado? = null,
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

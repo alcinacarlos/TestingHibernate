@@ -11,7 +11,8 @@ class Empleado(
     @Column
     val edad: Int,
 
-    @OneToOne
+    @OneToOne(cascade = [CascadeType.ALL])
+    @JoinColumn(name = "id_dpto") // o numDpo
     val dpto:Departamento,
 
     @Id
